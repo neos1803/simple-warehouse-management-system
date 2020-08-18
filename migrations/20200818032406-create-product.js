@@ -13,6 +13,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      photo_id: {
+        type: Sequelize.STRING
+      },
+      photo_url: {
+        type: Sequelize.STRING,
+      },
       stock: {
         allowNull: false,
         type: Sequelize.INTEGER
@@ -26,9 +32,9 @@ module.exports = {
         references: {
           model: "Users",
           key: "id",
-          onDelete: "CASCADE",
-          onUpdate: "CASCADE"
-        }
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE"
       },
       createdAt: {
         allowNull: false,
