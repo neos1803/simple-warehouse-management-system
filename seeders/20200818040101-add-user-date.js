@@ -6,6 +6,7 @@ module.exports = {
       full_name: "John Doe",
       username: "johndoe",
       email: "johndoe@gmail.com",
+      phone_number: "087879431",
       role: "admin",
       createdAt: new Date(),
       updatedAt: new Date()
@@ -13,6 +14,7 @@ module.exports = {
       full_name: "Sam Doe",
       username: "samdoe",
       email: "samdoe@gmail.com",
+      phone_number: "087879489",
       role: "admin",
       createdAt: new Date(),
       updatedAt: new Date()
@@ -20,6 +22,7 @@ module.exports = {
       full_name: "Jhonny Doe",
       username: "jhonnydoe",
       email: "jhonnydoe@gmail.com",
+      phone_number: "087879441",
       role: "admin",
       createdAt: new Date(),
       updatedAt: new Date()
@@ -33,5 +36,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    return queryInterface.bulkDelete("Users", null, {})
   }
 };

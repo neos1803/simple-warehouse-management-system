@@ -24,7 +24,7 @@ module.exports = {
       },
       phone_number: {
         unique: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       role: {
         type: Sequelize.STRING
