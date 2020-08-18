@@ -1,6 +1,6 @@
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const { User } = require('../models')
+// const models = require('../models')
 const response = require('../helpers/response')
 
 module.exports = async (req, res, next) => {
@@ -8,13 +8,13 @@ module.exports = async (req, res, next) => {
 
     const token = req.headers['authorization'].split(' ')[1]
     try {
-        const verify = jwt.verify(token, process.env.JWT_SECRET)
+        const verify = jwt.verify(token, process.env.SECRET)
         if (verify) {
             req.token = token
-            req.userId = jwt.decode(token, process.env.JWT_SECRET)
+            req.user_id = jwt.decode(token, process.env.SECRET)
             return next()
         }
     } catch (error) {
-        return res.status(500).json(response('fail', 'invalid token'))
+        return res.status(500).json(response('Fail', 'Invalid token'))
     }
 }

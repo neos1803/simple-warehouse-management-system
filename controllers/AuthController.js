@@ -1,6 +1,5 @@
 require('dotenv').config()
-const UserController = require("../controllers/UserController")
-const User = require("../models/user")
+const models = require("../models")
 const response = require('../helpers/response')
 const jwt = require('jsonwebtoken')
 const jwtSecret = process.env.SECRET
@@ -8,7 +7,7 @@ const jwtSecret = process.env.SECRET
 class Controller {
     static async login (req, res) {
         try {
-            const user = await User.findOne({
+            const user = await models.User.findOne({
                 where: {
                     username: req.body.username
                 }
@@ -25,3 +24,5 @@ class Controller {
         }
     }
 }
+
+module.exports = Controller
